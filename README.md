@@ -1,2 +1,2 @@
 # thematicTR
-Thematic maps of turkey
+Thematic maps of Turkey
