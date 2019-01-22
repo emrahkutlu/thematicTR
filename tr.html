@@ -10,10 +10,8 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-        crossorigin=""></script>
+    <link rel="stylesheet" href="./leaflet/leaflet.css"/>
+    <script  type="text/javascript" src="./leaflet/leaflet.js"></script>
 
     <script type="text/javascript" src="data/trLvl3.js"></script>   
     <script type="text/javascript" src="data/trLvl4.js"></script>    
@@ -30,42 +28,10 @@
 
 <body>
     <div id="mapid"></div>
-    <script>
-
-        var mymap = L.map('mapid').setView([38.703,34.915], 6);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
-        }).addTo(mymap);
-
-        L.marker([39.9215219, 32.8537929]).addTo(mymap)
-            .bindPopup("<b>Ankara</b><br />Capitol");
-
-        var popup = L.popup();
-
-        //L.geoJson(trLvl3).addTo(mymap); //attrib: EN: © EuroGeographics for the administrative boundaries
-        //L.geoJson(trLvl4).addTo(mymap);
-        //L.geoJson(trStatSilk).addTo(mymap);
-        //L.geoJson(trGadm0).addTo(mymap);
-        //L.geoJson(trGadm2).addTo(mymap);
-        L.geoJson(trGadm1).bindPopup(function (trGadm1) {
-        return trGadm1.feature.properties.NAME_1}).addTo(mymap);
-
-        
-    /*    function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(mymap);
-        }
-
-        mymap.on('click', onMapClick);
-    */
-    </script>
 
 
 
+<script type="text/javascript" src="script.js"></script> 
 </body>
 
 </html>
